@@ -450,7 +450,7 @@ export class Adventure {
     lamp.position.set(-2, 4, -2);
     lamp.castShadow = this.quality === "high";
     scene.add(lamp);
-    const cool = new THREE.PointLight(data.color, 35, 16, 1.8);
+    const cool = new THREE.PointLight(data.color, 18, 16, 1.8);
     cool.position.set(3, 2, 2);
     scene.add(cool);
 
@@ -484,16 +484,14 @@ export class Adventure {
     const lantern = new THREE.Mesh(new THREE.SphereGeometry(0.3, 16, 10), new THREE.MeshBasicMaterial({ color: 0xffd277 }));
     lantern.position.set(-2, 3.7, -2); scene.add(lantern);
     const title = createLabelSprite(`${data.name} · 洞穴营地`, "#ffd277");
-    title.position.set(0, 4.4, -5.8); scene.add(title);
-    const exitLabel = createLabelSprite("返回地表", "#a9d7ff", true);
-    exitLabel.position.set(0, 2.4, 6.4); scene.add(exitLabel);
+    title.position.set(0, 3.9, -5.8); title.scale.multiplyScalar(0.65); scene.add(title);
     const exitGlow = new THREE.Mesh(new THREE.CircleGeometry(1.5, 32), new THREE.MeshBasicMaterial({ color: data.sky, transparent: true, opacity: 0.55 }));
     exitGlow.position.set(0, 1.5, 6.7); exitGlow.rotation.y = Math.PI; scene.add(exitGlow);
 
     const flagBase = new THREE.Mesh(new THREE.CylinderGeometry(0.9, 1.15, 0.28, 24), new THREE.MeshStandardMaterial({ color: this.learnedCount() === 3 ? 0xffd166 : 0x6d6a78, emissive: this.learnedCount() === 3 ? 0x6b4a12 : 0x000000, emissiveIntensity: 1.2 }));
     flagBase.position.set(2.7, 0.14, -2.7); scene.add(flagBase);
     const flagLabel = createLabelSprite(this.flags.has(this.currentPlanet) ? "旗帜已飘扬" : "知识旗座", "#ffd166", true);
-    flagLabel.position.set(2.7, 1.1, -3.7); scene.add(flagLabel);
+    flagLabel.position.set(2.7, 1.1, -3.7); flagLabel.scale.multiplyScalar(0.7); scene.add(flagLabel);
     const flag = createPirateFlag();
     flag.group.position.set(2.7, 0.25, -2.7);
     flag.group.scale.setScalar(0.9);
