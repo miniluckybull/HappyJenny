@@ -1,0 +1,47 @@
+{
+  "schema": "asset-orientation/1",
+  "revision": "2026-10-13",
+  "itemId": "05-V8-0002",
+  "status": "source_declared",
+  "referenceState": "default",
+  "scope": "Whole-asset placement facing in the reference state; not the live direction of each articulated child.",
+  "source": {
+    "frame": "Exported source-scene coordinates, before loader conversion",
+    "upAxis": "+Z",
+    "forwardAxis": "-X",
+    "forwardVector": [
+      -1,
+      0,
+      0
+    ]
+  },
+  "placement": {
+    "Y": {
+      "upAxis": "+Y",
+      "forwardAxis": "-X",
+      "forwardVector": [
+        -1,
+        0,
+        0
+      ]
+    },
+    "Z": {
+      "upAxis": "+Z",
+      "forwardAxis": "-X",
+      "forwardVector": [
+        -1,
+        0,
+        0
+      ]
+    }
+  },
+  "defaultUpAxis": "Y",
+  "frameRule": "placement values are in an identity placement parent after createAsset up-axis conversion. They are NOT raw root-local vectors or world vectors after placement.",
+  "evidence": [
+    {
+      "axis": "-X",
+      "location": "data.json.gz/states/default/nodes/Shuttle/properties/origin",
+      "quote": "Floor center, Z up, nose toward -X"
+    }
+  ]
+}
